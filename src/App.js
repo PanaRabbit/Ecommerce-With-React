@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { Breadcrumb } from './Components/Breadcrumb/Breadcrumb';
+import { Footer } from './Components/Footer/Footer';
+import { Header } from './Components/Header/Header';
+import React, { useState } from 'react';
+// import { useEffect , useState} from 'react';
 
-function App() {
+import Layout from './layouts/Layout';
+
+
+const App = () => {
+  /*useEffect( () => {
+    fetch ("https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js")
+    .then((res) => res.json())
+    .then((data) => {
+         console.log (data);
+                });
+  }, []);*/
+
+  const [crumbs, setCrumbs] = useState(['Home', 'Category', 'Sub Category']);
+
+  const selected = crumb => {
+    console.log(crumb);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Layout/>
+      <Breadcrumb/>
+      <Header/>
+      <Footer/>
+      <Breadcrumb crumbs={ crumbs } selected={ selected }  />
     </div>
-  );
-}
+  )
+};
+
 
 export default App;
