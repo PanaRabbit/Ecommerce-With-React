@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../ImgCarousel/ImgCarousel.css";
+import "../ImgCarousel/ImgCarousel.css";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Carousel = ({ imagesArray }) => {
@@ -30,8 +30,8 @@ const Carousel = ({ imagesArray }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.buttonsCarousel}>
+    <div className="container">
+      <div className="buttonsCarouse">
         <SlArrowLeft
           size={"5%"}
           onClick={() => previousImage()}
@@ -43,7 +43,7 @@ const Carousel = ({ imagesArray }) => {
           style={{ cursor: "pointer" }}
         />
       </div>
-      <div className={styles.imagesCarousel}>
+      <div className="imagesCarousel">
         <img src={`https:${selectedImage.split("?")[0]}`} alt="" />
       </div>
     </div>

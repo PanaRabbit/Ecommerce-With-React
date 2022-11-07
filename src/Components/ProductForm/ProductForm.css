@@ -29,3 +29,87 @@
   text-decoration: line-through;
   color: red;
 }
+.quantityAndTotal {
+  margin: 1.5rem 0 2.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerQuantity {
+  border: 1px solid #c8c7c7;
+  border-radius: 0.3rem;
+  padding: 0.7rem;
+}
+
+.containerQuantity span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.containerQuantity span:first-child {
+  cursor: pointer;
+}
+
+.containerQuantity span:last-child {
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.containerTotal span:first-child {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #716e6e;
+}
+
+.containerTotal span:last-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons button {
+  padding: 1rem 0;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #eee;
+}
+
+.buttons button:first-child {
+  background-color: #5369ff;
+  flex: 1;
+}
+
+.buttons button:last-child {
+  background-color: #000;
+  flex: 1;
+}
+
+.textDetails {
+  color: #716e6e;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttons {
+    flex-direction: row;
+  }
+}
