@@ -1,11 +1,12 @@
 import './App.css';
-import { Breadcrumb } from './Components/Breadcrumb/Breadcrumb';
-import { Footer } from './Components/Footer/Footer';
-import { Header } from './Components/Header/Header';
-import React, { useState } from 'react';
+import  Breadcrumb  from './layouts/Breadcrumb/Bread';
+
+import { Form } from './layouts/Form/Form';
+import { ImgCarousel } from './layouts/ImgCarousel/ImgCarousel';
+import Layout from './layouts/Layout';
 // import { useEffect , useState} from 'react';
 
-import Layout from './layouts/Layout';
+
 
 
 const App = () => {
@@ -17,18 +18,15 @@ const App = () => {
                 });
   }, []);*/
 
-  const [crumbs, setCrumbs] = useState(['Home', 'Category', 'Sub Category']);
-
-  const selected = crumb => {
-    console.log(crumb);
-  }
+  
+ 
   return (
     <div>
-      <Layout/>
       <Breadcrumb/>
-      <Header/>
-      <Footer/>
-      <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+      <Layout/>
+      <Form/>
+      <ImgCarousel/>
+     
     </div>
   )
 };
