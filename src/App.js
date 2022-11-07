@@ -6,22 +6,8 @@ import Layout from './Layouts/Layout';
 
 
 const App = () => {
-  /*useEffect( () => {
-    fetch ("https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js")
-    .then((res) => res.json())
-    .then((data) => {
-         console.log (data);
-                });
-  }, []);*/
-
-  
- 
   return (
-    <div>
-      
       <Layout/>
-      
-    </div>
   )
 };
 
