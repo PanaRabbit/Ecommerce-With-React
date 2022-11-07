@@ -1,11 +1,11 @@
 import ImgCarousel from "../../Components/ImgCarousel/ImgCarousel";
-import Descrip from "../../Components/Form/Descrip";
+import ProductForm from "../../Components/ProductForm/ProductForm";
 
 const Product = () => {
   return (
     <>
       <ImgCarousel />
-      <Descrip />
+      <ProductForm />
     </>
   );
 };
