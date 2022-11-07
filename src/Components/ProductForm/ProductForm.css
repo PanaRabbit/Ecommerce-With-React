@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+.title {
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.price {
+  margin-top: 0.5rem;
+  margin-bottom: 1.3rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #c8c7c7;
+}
+
+.price h3 {
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-right: 0.8rem;
+}
+
+.price span {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-decoration: line-through;
+  color: red;
+}

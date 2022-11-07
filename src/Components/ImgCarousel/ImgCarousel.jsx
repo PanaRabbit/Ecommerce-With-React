@@ -33,12 +33,12 @@ const Carousel = ({ imagesArray }) => {
     <div className={styles.container}>
       <div className={styles.buttonsCarousel}>
         <SlArrowLeft
-          size={"1%"}
+          size={"5%"}
           onClick={() => previousImage()}
           style={{ cursor: "pointer" }}
         />
         <SlArrowRight
-          size={"1%"}
+          size={"5%"}
           onClick={() => nextImage()}
           style={{ cursor: "pointer" }}
         />

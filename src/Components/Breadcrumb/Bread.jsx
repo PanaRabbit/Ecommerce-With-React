@@ -10,7 +10,7 @@ function Bread() {
         <Row>
           <Col>
             <Breadcrumb>
-              <Breadcrumb.Item href="#">Catalog</Breadcrumb.Item>
+              <Breadcrumb.Item clashref="#">Catalog</Breadcrumb.Item>
               <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
                 Snekers
               </Breadcrumb.Item>

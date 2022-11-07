@@ -1,28 +1,32 @@
 import ImgCarousel from "../../Components/ImgCarousel/ImgCarousel";
 import ProductForm from "../../Components/ProductForm/ProductForm";
+
 import { useEffect, useState } from "react";
 
-const App = () => {
-  /* STATES */
-  const [response, setResponse] = useState(undefined);
+const Product = () => {
+  const [data, setData] = useState({
+    images: [],
+  });
 
-  /* USE EFFECT */
   useEffect(() => {
-    (async () => {
-      const resp = await fetch(
-        "https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js"
-      );
-      const result = await resp.json();
-      setResponse(result);
-    })();
+    fetch(
+      "https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js"
+    )
+      .then((res) => res.json())
+      .then((res) => setData(res))
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
-  if (response === undefined) return null;
+  console.log(data);
 
   return (
     <>
-      <ImgCarousel imagesArray={response.images} />
-      <ProductForm />
+      {data.images.length > 0 ? (
+        <ImgCarousel imagesArray={data.images} />
+      ) : null}
+      <ProductForm information={data} />
     </>
   );
 };

@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import styles from "../ProductForm/ProductForm.css";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 const InformationProduct = ({ information }) => {
+  const [openShoppingCart, setOpenShoppingCart] = useState(false);
+
+  const toggleModal = () => {
+    setOpenShoppingCart(!openShoppingCart);
+  };
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{information.title}</h2>
@@ -25,7 +33,18 @@ const InformationProduct = ({ information }) => {
         <button>Add to favourite</button>
         <button onClick={() => toggleModal()}>Add to cart</button>
       </div>
-      <p className={styles.textDetails}>{information.description}</p>
+      <div
+        dangerouslySetInnerHTML={{ __html: information.description }}
+        className={styles.textDetails}
+      />
+
+      {information ? (
+        <ShoppingCart
+          openShoppingCart={openShoppingCart}
+          toggleModal={toggleModal}
+          informationProduct={information}
+        />
+      ) : null}
     </div>
   );
 };

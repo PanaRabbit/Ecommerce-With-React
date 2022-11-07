@@ -1,0 +1,21 @@
+.container {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  max-width: 70rem;
+  height: auto;
+  z-index: 99;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 1px 1px 36px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 36px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 36px 8px rgba(0, 0, 0, 0.75);
+}
+.topSide {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
