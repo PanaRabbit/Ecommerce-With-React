@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 
 function Bread() {
   return (
-    <div className="breadcrumb">
+    <div className="d-none d-lg-block">
       <Container fluid>
         <Row>
           <Col>
