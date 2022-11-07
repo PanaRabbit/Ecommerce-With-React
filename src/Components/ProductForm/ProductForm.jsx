@@ -1,21 +1,33 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React, { useState } from "react";
 
-function ProductForm() {
+const InformationProduct = ({ information }) => {
   return (
-    <Container>
-      <Row>
-        <Col sm={8}>sm=8</Col>
-        <Col sm={4}>sm=4</Col>
-      </Row>
-      <Row>
-        <Col sm>sm=true</Col>
-        <Col sm>sm=true</Col>
-        <Col sm>sm=true</Col>
-      </Row>
-    </Container>
-  );
-}
+    <div className={styles.container}>
+      <h2 className={styles.title}>{information.title}</h2>
+      <div className={styles.price}>
+        <h3>$ {information.price}</h3>
+        <span>$ {information.compare_at_price}</span>
+      </div>
 
-export default ProductForm;
+      <div className={styles.quantityAndTotal}>
+        <div className={styles.containerQuantity}>
+          <span>-</span>
+          <span>1</span>
+          <span>+</span>
+        </div>
+        <div className={styles.containerTotal}>
+          <span>Total Price: </span>
+          <span>$ {information.price}</span>
+        </div>
+      </div>
+
+      <div className={styles.buttons}>
+        <button>Add to favourite</button>
+        <button onClick={() => toggleModal()}>Add to cart</button>
+      </div>
+      <p className={styles.textDetails}>{information.description}</p>
+    </div>
+  );
+};
+
+export default InformationProduct;
