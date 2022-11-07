@@ -1,23 +1,13 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Header from "../Components/Header/Header";
+import Product from "../Pages/Product/Product";
 
 function Layout() {
   return (
-    <Container>
-      <Row className="justify-content-md-center">
-        <Col xs lg="2">
-        Imagen carrusel
-          </Col>
-        <Col md="auto"></Col>
-        <Col xs lg="2">
-          Formulario y descripcion
-          </Col>
-      </Row>
-      
-    </Container>
+    <>
+      <Header />
+      <Product />
+    </>
   );
 }
 
 export default Layout;
-

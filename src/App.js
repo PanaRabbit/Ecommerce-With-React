@@ -1,9 +1,5 @@
 import './App.css';
-import  Breadcrumb  from './layouts/Breadcrumb/Bread';
-
-import { Form } from './layouts/Form/Form';
-import { ImgCarousel } from './layouts/ImgCarousel/ImgCarousel';
-import Layout from './layouts/Layout';
+import Layout from './Layouts/Layout';
 // import { useEffect , useState} from 'react';
 
 
@@ -22,11 +18,9 @@ const App = () => {
  
   return (
     <div>
-      <Breadcrumb/>
+      
       <Layout/>
-      <Form/>
-      <ImgCarousel/>
-     
+      
     </div>
   )
 };
