@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+.imagesCarousel {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagesCarousel img {
+  width: 80%;
+}
+
+.buttonsCarousel {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    flex: 1;
+  }
+
+  .buttonsCarousel {
+    top: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .buttonsCarousel {
+    top: 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .buttonsCarousel {
+    top: 50%;
+  }
+}

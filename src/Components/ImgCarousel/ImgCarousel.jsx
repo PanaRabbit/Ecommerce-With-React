@@ -1,51 +1,53 @@
-import Carousel from 'react-bootstrap/Carousel';
-import Container from 'react-bootstrap/esm/Container';
+import React, { useState } from "react";
+import styles from "../ImgCarousel/ImgCarousel.css";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
-function ImgCarousel() {
-    return (
-        <Container>
+const Carousel = ({ imagesArray }) => {
+  const images = imagesArray;
 
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://cdn.dribbble.com/users/14814/screenshots/16535574/reactlogo_4x.png"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://cdn.dribbble.com/users/14814/screenshots/16535574/reactlogo_4x.png"
-                        alt="Second slide"
-                    />
+  const [indexImage, setIndexImage] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://cdn.dribbble.com/users/14814/screenshots/16535574/reactlogo_4x.png"
-                        alt="Third slide"
-                    />
+  const selectImage = (index, arrayImages, next = true) => {
+    const condition = next ? indexImage < images.length - 1 : indexImage > 0;
+    const nextIndex = next
+      ? condition
+        ? indexImage + 1
+        : 0
+      : condition
+      ? indexImage - 1
+      : images.length - 1;
+    setSelectedImage(images[nextIndex]);
+    setIndexImage(nextIndex);
+  };
 
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </Container>
-    );
-}
+  const previousImage = () => {
+    selectImage(indexImage, images, false);
+  };
 
-export default ImgCarousel;
+  const nextImage = () => {
+    selectImage(indexImage, images);
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.buttonsCarousel}>
+        <SlArrowLeft
+          size={"1%"}
+          onClick={() => previousImage()}
+          style={{ cursor: "pointer" }}
+        />
+        <SlArrowRight
+          size={"1%"}
+          onClick={() => nextImage()}
+          style={{ cursor: "pointer" }}
+        />
+      </div>
+      <div className={styles.imagesCarousel}>
+        <img src={`https:${selectedImage.split("?")[0]}`} alt="" />
+      </div>
+    </div>
+  );
+};
+
+export default Carousel;
