@@ -11,20 +11,20 @@ li {
   padding-right: 2em;
   margin: 0;
 }
-  li:after {
-    content: '>';
-    position: absolute;
-    display: inline-block;
-    right: 0;
-    width: 2em;
-    text-align: center;
-  }
+li:after {
+  content: ">";
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  width: 2em;
+  text-align: center;
+}
 li:last-child {
   font-weight: bold;
 }
-  li:last-child:after {
-    content: '';
-  }
+li:last-child:after {
+  content: "";
+}
 
 a {
   text-decoration: none;
@@ -32,6 +32,6 @@ a {
   color: #333;
   white-space: nowrap;
 }
-  a:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
+}
