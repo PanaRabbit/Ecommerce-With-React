@@ -118,12 +118,12 @@ const InformationProduct = ({ product }) => {
       </div>
 
       <div className="buttons">
-        <button>Add to favourite</button>
+        <button id="add-favourite-button">Add to favourite</button>
         <button onClick={() => toggleModal()}>Add to cart</button>
       </div>
       <div
         dangerouslySetInnerHTML={{ __html: product.description }}
-        className="textDetails"
+        className="section textDetails"
       />
 
       {product ? (
