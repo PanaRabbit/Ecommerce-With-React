@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Prueba Técnica GradiWeb Frontend Developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://prueba-gradi-web.herokuapp.com/
 
-## Available Scripts
+Proyecto hecho con Create React APP.
 
-In the project directory, you can run:
+Para iniciar el proyecto se deben poner los siguientes comandos en la terminal:
+
+### `npm install`
+
+Luego
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se desarrollo con : #ReactJS #HTML5 #CSS #JavaScript $Boostrap5
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Se maqueta el layout de una vista de un producto consumuento la informacion que nos brindo el endpoint https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js.
 
-### `npm test`
+Se cumple la solicitud de crear un carusel con las imagenes brindadas por el anterior endpoint mencionado.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tambien se cumple con generar el modal el cual dejo la imagen de demostracion en la parte de recursos y al final de este documento.
 
-### `npm run build`
+## Imagenes de muestra
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Vista Web
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Web](src/assets/Vista%20Web.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Vista Tablet
 
-### `npm run eject`
+![Tablet](src/assets/VistaTablet.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Vista Mobile
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![FMobile](src/assets/VistaTelefono.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Modal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para que funcione el modal "add to cart" el usuario debe seleccionar las dos caracteristicas del producto (talla, color) para que se visualice este componente.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Modal](src/assets/Modal.jpg)
