@@ -1,5 +1,5 @@
-import Header from "../Components/Header/Header";
-import Product from "../Pages/Product/Product";
+import Header from "../../Components/Header/Header";
+import Product from "../../Pages/Product/Product";
 import "../Components/ProductForm/ProductForm.css";
 
 function Layout() {
