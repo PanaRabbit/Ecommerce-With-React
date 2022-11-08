@@ -21,7 +21,7 @@ const Product = () => {
 
   return (
     <>
-      <div clasName="">
+      <div>
         <div className="row">
           {data.images.length > 0 ? (
             <div className="col-md-6">
@@ -29,7 +29,7 @@ const Product = () => {
             </div>
           ) : null}
           <div className="col-md-6">
-            <ProductForm information={data} />
+            <ProductForm product={data} />
           </div>
         </div>
       </div>
