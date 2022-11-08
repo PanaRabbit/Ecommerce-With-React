@@ -6,6 +6,7 @@ const InformationProduct = ({ product }) => {
   const [openShoppingCart, setOpenShoppingCart] = useState(false);
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
+  const [ammount, setAmmount] = useState(1);
 
   const colorOptions = product?.options?.find(
     (option) => option?.name === "Color"
@@ -92,13 +93,27 @@ const InformationProduct = ({ product }) => {
 
       <div className="quantityAndTotal">
         <div className="containerQuantity">
-          <span>-</span>
-          <span>1</span>
-          <span>+</span>
+          <span
+            onClick={() => {
+              if (ammount > 1) {
+                setAmmount(ammount - 1);
+              }
+            }}
+          >
+            -
+          </span>
+          <span>{ammount}</span>
+          <span
+            onClick={() => {
+              setAmmount(ammount + 1);
+            }}
+          >
+            +
+          </span>
         </div>
         <div className="containerTotal">
           <span>Total Price: </span>
-          <span>$ {product.price}</span>
+          <span>{dollarUS.format(product.price * ammount)}</span>
         </div>
       </div>
 
