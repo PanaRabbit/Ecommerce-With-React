@@ -5,9 +5,14 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 const InformationProduct = ({ product }) => {
   const [openShoppingCart, setOpenShoppingCart] = useState(false);
   const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
 
   const colorOptions = product?.options?.find(
     (option) => option?.name === "Color"
+  );
+
+  const sizeOptions = product?.options?.find(
+    (option) => option?.name === "Size"
   );
 
   const dollarUS = Intl.NumberFormat("en-US", {
@@ -27,30 +32,61 @@ const InformationProduct = ({ product }) => {
         <h4>{dollarUS.format(product.compare_at_price)}</h4>
       </div>
 
+      {/* Color Options */}
       {colorOptions ? (
         <div className="section">
-          <span>Color: </span>
-          {colorOptions.values.map((value) => {
-            return value === selectedColor ? (
-              <div className="outter-dot selected">
+          <span className="col">Color: </span>
+          <div className="col-11 d-flex flex-wrap">
+            {colorOptions.values.map((value) => {
+              return value === selectedColor ? (
+                <div className="outter-dot selected">
+                  <span
+                    className="inner-dot"
+                    key={value}
+                    style={{ backgroundColor: value }}
+                    onClick={() => setSelectedColor(value)}
+                  />
+                </div>
+              ) : (
+                <div className="outter-dot">
+                  <span
+                    className="inner-dot"
+                    key={value}
+                    style={{ backgroundColor: value }}
+                    onClick={() => setSelectedColor(value)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
+
+      {/* Size Options */}
+      {sizeOptions ? (
+        <div className="section">
+          <span className="col">Size: </span>
+          <div className="col-11 d-flex flex-wrap">
+            {sizeOptions.values.map((value) =>
+              value === selectedSize ? (
                 <span
-                  className="inner-dot"
+                  className="size-square selected"
                   key={value}
-                  style={{ backgroundColor: value }}
-                  onClick={() => setSelectedColor(value)}
-                />
-              </div>
-            ) : (
-              <div className="outter-dot">
+                  onClick={() => setSelectedSize(value)}
+                >
+                  {value}
+                </span>
+              ) : (
                 <span
-                  className="inner-dot"
+                  className="size-square"
                   key={value}
-                  style={{ backgroundColor: value }}
-                  onClick={() => setSelectedColor(value)}
-                />
-              </div>
-            );
-          })}
+                  onClick={() => setSelectedSize(value)}
+                >
+                  {value}
+                </span>
+              )
+            )}
+          </div>
         </div>
       ) : null}
 

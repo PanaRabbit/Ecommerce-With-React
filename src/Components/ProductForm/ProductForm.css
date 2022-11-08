@@ -5,6 +5,7 @@
 
 .section {
   margin-top: 0.5rem;
+  margin-right: 0.5rem;
   margin-bottom: 1.3rem;
   display: flex;
   align-items: center;
@@ -110,8 +111,21 @@
   justify-content: center;
 }
 
+.size-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.4rem;
+  padding: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: #bfbfbf solid 1px;
+  color: #bfbfbf;
+}
+
 .selected {
-  border: rgb(0, 0, 0) solid 1px;
+  border: black solid 1px;
+  color: black;
 }
 
 @media screen and (min-width: 576px) {
