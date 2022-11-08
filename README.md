@@ -12,7 +12,11 @@ Luego
 
 ### `npm start`
 
-Se desarrollo con : #ReactJS #HTML5 #CSS #JavaScript $Boostrap5
+Se desarrollo con : #ReactJS 
+HTML5 
+CSS 
+JavaScript 
+Boostrap5
 
 Se maqueta el layout de una vista de un producto consumuento la informacion que nos brindo el endpoint https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js.
 
