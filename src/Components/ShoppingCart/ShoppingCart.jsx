@@ -1,12 +1,19 @@
 import ReactDOM from "react-dom";
 import "../ShoppingCart/ShoppingCart.css";
+import { dollarUS } from "../../utils/formats";
 
 const ShoppingCart = (props) => {
-  const { openShoppingCart, toggleModal, infoProduct } = props;
+  const { openShoppingCart, toggleModal, infoProduct, variantInfo } = props;
 
   if (infoProduct === null) {
     return <></>;
   }
+
+  const variant = infoProduct?.variants?.find(
+    (variant) =>
+      variant.option1 === variantInfo.selectedColor &&
+      variantInfo.selectedSize === variant.option2
+  );
 
   return openShoppingCart
     ? ReactDOM.createPortal(
@@ -24,15 +31,17 @@ const ShoppingCart = (props) => {
                 width={100}
               />
               <div className="detailProductInfo">
-                <h2>{infoProduct?.title}</h2>
+                <h2>
+                  {infoProduct?.title} - {variant.title}
+                </h2>
                 <h4 className="property">
-                  Color: <span>Red</span>
+                  Color: <span>{variant.option1}</span>
                 </h4>
                 <h4 className="property">
-                  Size: <span>8.5</span>
+                  Size: <span>{variant.option2}</span>
                 </h4>
                 <h4 className="property">
-                  Quantity: <span>1</span>
+                  Quantity: <span>{variantInfo.ammount}</span>
                 </h4>
               </div>
             </div>
@@ -42,24 +51,28 @@ const ShoppingCart = (props) => {
               <div className="detailPriceInfo">
                 <div>
                   <h4 className="propertyPrice">Actual Price:</h4>
-                  <span>$ {infoProduct?.compare_at_price}</span>
+                  <span>{dollarUS.format(variant?.compare_at_price)}</span>
                 </div>
 
                 <div>
                   <h4 className="propertyPrice">Discount:</h4>
                   <span>
-                    $ {infoProduct?.compare_at_price - infoProduct?.price}
+                    {dollarUS.format(
+                      variant?.compare_at_price - infoProduct?.price
+                    )}
                   </span>
                 </div>
 
                 <div>
                   <h4 className="propertyPrice">Final Price:</h4>
-                  <span>$ {infoProduct?.price}</span>
+                  <span>{dollarUS.format(infoProduct?.price)}</span>
                 </div>
 
                 <div>
                   <h4 className="propertyPrice">Subtotal:</h4>
-                  <span>$ {infoProduct?.price}</span>
+                  <span>
+                    {dollarUS.format(infoProduct?.price * variantInfo.ammount)}
+                  </span>
                 </div>
               </div>
             </div>

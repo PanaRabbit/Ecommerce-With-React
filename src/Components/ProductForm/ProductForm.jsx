@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../ProductForm/ProductForm.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import { dollarUS } from "../../utils/formats";
 
 const InformationProduct = ({ product }) => {
   const [openShoppingCart, setOpenShoppingCart] = useState(false);
@@ -16,13 +17,14 @@ const InformationProduct = ({ product }) => {
     (option) => option?.name === "Size"
   );
 
-  const dollarUS = Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
+  const validateVariantInfo = () => {
+    return selectedColor !== "" && selectedSize !== "" && ammount >= 1;
+  };
 
   const toggleModal = () => {
-    setOpenShoppingCart(!openShoppingCart);
+    if (validateVariantInfo()) {
+      setOpenShoppingCart(!openShoppingCart);
+    }
   };
 
   return (
@@ -40,19 +42,17 @@ const InformationProduct = ({ product }) => {
           <div className="col-11 d-flex flex-wrap">
             {colorOptions.values.map((value) => {
               return value === selectedColor ? (
-                <div className="outter-dot selected">
+                <div className="outter-dot selected" key={value}>
                   <span
                     className="inner-dot"
-                    key={value}
                     style={{ backgroundColor: value }}
                     onClick={() => setSelectedColor(value)}
                   />
                 </div>
               ) : (
-                <div className="outter-dot">
+                <div className="outter-dot" key={value}>
                   <span
                     className="inner-dot"
-                    key={value}
                     style={{ backgroundColor: value }}
                     onClick={() => setSelectedColor(value)}
                   />
@@ -119,7 +119,7 @@ const InformationProduct = ({ product }) => {
 
       <div className="buttons">
         <button id="add-favourite-button">Add to favourite</button>
-        <button onClick={() => toggleModal()}>Add to cart</button>
+        <button onClick={toggleModal}>Add to cart</button>
       </div>
       <div
         dangerouslySetInnerHTML={{ __html: product.description }}
@@ -130,7 +130,12 @@ const InformationProduct = ({ product }) => {
         <ShoppingCart
           openShoppingCart={openShoppingCart}
           toggleModal={toggleModal}
-          informationProduct={product}
+          infoProduct={product}
+          variantInfo={{
+            selectedColor,
+            selectedSize,
+            ammount,
+          }}
         />
       ) : null}
     </div>
