@@ -30,21 +30,23 @@ const Carousel = ({ imagesArray }) => {
   };
 
   return (
-    <div className="container-carousel">
-      <div className="buttonsCarousel">
+    <div className="row align-items-center text-centert">
+      <div className="col">
         <SlArrowLeft
-          size={"5%"}
+          size={"100%"}
           onClick={() => previousImage()}
           style={{ cursor: "pointer" }}
         />
+      </div>
+      <div className="carousel col-10">
+        <img src={`https:${selectedImage.split("?")[0]}`} alt="" />
+      </div>
+      <div className="col">
         <SlArrowRight
-          size={"5%"}
+          size={"100%"}
           onClick={() => nextImage()}
           style={{ cursor: "pointer" }}
         />
-      </div>
-      <div className="imagesCarousel">
-        <img src={`https:${selectedImage.split("?")[0]}`} alt="" />
       </div>
     </div>
   );
