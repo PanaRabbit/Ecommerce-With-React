@@ -1,6 +1,6 @@
 import './App.css';
 import './'
-import Layout from './Layouts/Layout';
+import Layout from './layouts/Layout';
 // import { useEffect , useState} from 'react';
 
 
