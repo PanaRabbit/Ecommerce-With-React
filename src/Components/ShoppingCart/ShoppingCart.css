@@ -35,7 +35,7 @@
   height: 2px;
   margin-right: 1px;
   margin-top: 1px;
-  background-color: #ffffff;
+  background-color: transparent;
   color: #000000;
 
   justify-content: center;
@@ -188,7 +188,6 @@
   height: 3rem;
   margin-right: -0.5rem;
   margin-top: -0.5rem;
-  background-color: #ffffff;
   color: #000000;
   font-weight: bold;
   border: none;
