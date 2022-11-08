@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  position: left;
 }
-
 .imagesCarousel {
   width: 100%;
   overflow: hidden;
@@ -17,7 +15,6 @@
 
 .buttonsCarousel {
   position: absolute;
-  width: 100%;
   top: 50%;
   display: flex;
   justify-content: space-between;

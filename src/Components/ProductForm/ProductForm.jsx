@@ -10,7 +10,7 @@ const InformationProduct = ({ information }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-product-form">
       <h2 className="title">{information.title}</h2>
       <div className="price">
         <h3>$ {information.price}</h3>

@@ -30,8 +30,8 @@ const Carousel = ({ imagesArray }) => {
   };
 
   return (
-    <div className="container">
-      <div className="buttonsCarouse">
+    <div className="container-carousel">
+      <div className="buttonsCarousel">
         <SlArrowLeft
           size={"5%"}
           onClick={() => previousImage()}

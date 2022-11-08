@@ -5,10 +5,8 @@ import "../Components/ProductForm/ProductForm.css";
 function Layout() {
   return (
     <>
-      <div className="container>">
-        <Header />
-        <Product />
-      </div>
+      <Header />
+      <Product />
     </>
   );
 }

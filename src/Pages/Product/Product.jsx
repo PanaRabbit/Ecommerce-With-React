@@ -1,6 +1,6 @@
 import ImgCarousel from "../../Components/ImgCarousel/ImgCarousel";
 import ProductForm from "../../Components/ProductForm/ProductForm";
-
+import "../Product/Product.css";
 import { useEffect, useState } from "react";
 
 const Product = () => {
@@ -19,14 +19,20 @@ const Product = () => {
       });
   }, []);
 
-  console.log(data);
-
   return (
     <>
-      {data.images.length > 0 ? (
-        <ImgCarousel imagesArray={data.images} />
-      ) : null}
-      <ProductForm information={data} />
+      <div clasName="">
+        <div className="row">
+          {data.images.length > 0 ? (
+            <div className="col-md-6">
+              <ImgCarousel imagesArray={data.images} />
+            </div>
+          ) : null}
+          <div className="col-md-6">
+            <ProductForm information={data} />
+          </div>
+        </div>
+      </div>
     </>
   );
 };

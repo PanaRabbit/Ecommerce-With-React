@@ -1,24 +1,18 @@
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 function Bread() {
   return (
-    <div className="d-none d-lg-block">
-      <Container fluid>
-        <Row>
-          <Col>
-            <Breadcrumb>
-              <Breadcrumb.Item clashref="#">Catalog</Breadcrumb.Item>
-              <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-                Snekers
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Free Trainer 3 / MMW</Breadcrumb.Item>
-            </Breadcrumb>
-          </Col>
-        </Row>
-      </Container>
+    <div
+      style={{ display: "block", width: 700, padding: 10 }}
+      className="d-none d-lg-block"
+    >
+      <Breadcrumb className="Text-breadcrumb">
+        <Breadcrumb.Item active>Catalog</Breadcrumb.Item>
+        <Breadcrumb.Item active>Sneakers </Breadcrumb.Item>
+        <Breadcrumb.Item active>Free Trainer 3 / MMW</Breadcrumb.Item>
+      </Breadcrumb>
     </div>
   );
 }

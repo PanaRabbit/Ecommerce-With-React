@@ -12,9 +12,7 @@ const ShoppingCart = (props) => {
     ? ReactDOM.createPortal(
         <div className="container">
           <div className="topSide">
-            <h2>
-              Product added successfully <span>&#129395;</span>
-            </h2>
+            <h2>Product added successfully</h2>
             <button onClick={() => toggleModal()}>X</button>
           </div>
 
@@ -33,7 +31,7 @@ const ShoppingCart = (props) => {
                 <h4 className="property">
                   Size: <span>8.5</span>
                 </h4>
-                <h4 className="propert">
+                <h4 className="property">
                   Quantity: <span>1</span>
                 </h4>
               </div>
@@ -67,7 +65,7 @@ const ShoppingCart = (props) => {
             </div>
           </div>
           <div className="buttons">
-            <button>Go to cart</button>
+            <button className="Button-text">Go to cart</button>
             <button onClick={() => toggleModal()}>Continue shopping</button>
           </div>
         </div>,

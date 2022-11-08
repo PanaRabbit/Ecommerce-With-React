@@ -1,0 +1,10 @@
+.ContainerCarrousel {
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.ContainerForm {
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
