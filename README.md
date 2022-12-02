@@ -1,6 +1,6 @@
-# Prueba Técnica GradiWeb Frontend Developer
+# Ecommerce With React 
 
-https://prueba-gradi-web.herokuapp.com/
+
 
 Proyecto hecho con Create React APP.
 
